@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Camera Feed</title>
+    <link rel="stylesheet" href="../static/style/style.css">
+</head>
+<body>
+    <header>
+        <h1>Live Food Detection</h1>
+    </header>
+    <main>
+        <div class="upload-section" id="video-section">
+            <img src="/live_feed" id="video-feed" alt="Live Feed">
+            <button id="capture-button">Capture Image</button>
+        </div>
+    </main>
+    
+    <!-- Scroll to the video section when page is loaded -->
+    <script>
+        window.onload = function() {
+            // Scroll to the 'video-section' div after the page has loaded
+            document.getElementById("video-section").scrollIntoView({ behavior: 'smooth' });
+        };
+    </script>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

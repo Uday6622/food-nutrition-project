@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Prediction Result</title>
+    <style>
+        /* General Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            height: 100vh;
+            background-image: url("../static/style/images/back.jpg"); /* Single background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 10px;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 15px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            color: #ffe100;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .card h2, .card h3 {
+            margin: 10px 0;
+            color: #f20b0b;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            margin: 15px 0;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .card li {
+            margin: 5px 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        button {
+            background-color: #FFD700;
+            color: black;
+            font-size: 1.2rem;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #FFC107;
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(255, 193, 7, 0.6);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Food Prediction Result</h1>
+    </header>
+    <main>
+        <div class="card">
+            <img src="../{{ image_path }}" alt="Captured Food">
+            <h3>Nutritional Information:</h3>
+            <h2>Prediction: {{ prediction }}</h2>
+            <ul>
+                <li><strong>Calories:</strong> {{ calories }} kcal</li>
+                <li><strong>Carbohydrates:</strong> {{ carbohydrates }} g</li>
+                <li><strong>Protein:</strong> {{ protein }} g</li>
+                <li><strong>Fat:</strong> {{ fat }} g</li>
+                <li><strong>Fiber:</strong> {{ fiber }} g</li>
+            </ul>
+            <button onclick="window.location.href='/'">Retake Image</button>
+        </div>
+    </main>
+</body>
+</html>
